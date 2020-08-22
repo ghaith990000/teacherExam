@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Recursive&display=swap');
+
+*,
+*::before,
+*::after{
+	padding: 0;
+	margin: 0;
+}
+
+ol{
+	list-style: none;
+}
+body{
+	font-family: 'Karla', sans-serif;
+	font-size: 100%;
+	background-color: #C9FBFF;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+h1{
+	font-family: 'Lemonada', cursive;
+	color: #57737A;
+	margin-bottom: 2rem;
+	font-size: 2.7rem;
+}
+
+h2{
+	font-family: 'Recursive', sans-serif;
+	color: #C2FCF7;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+	
+
+.container{
+	max-width: 70%;
+	margin: auto;
+	background-color: #85BDBF;
+	padding: 3% 7%;
+	opacity: 0.8; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+header{
+	margin-bottom: 30px;
+}
+
+.question-container{
+	background-color: hsl();
+	margin-bottom: 0.5rem;
+	border-radius: 10px;
+	padding: 1rem 2rem;
+}
+
+.reset{
+	counter-reset: questions;
+}
+
+.question{ 
+	color: #040F0F;
+	font-size: 1.3rem;
+	font-weight: 700;
+	position: relative;
+	margin-bottom: 1rem;
+}
+.question::before{
+	position: absolute;
+	background-color: white;
+	border: 3px solid gray;
+	border-radius: 50%;
+	right: -4rem;
+	top: -0.3rem;
+	counter-increment: questions;
+	content: counter(questions);
+	width: 2em;
+	height: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.answer{
+	font-size: 1.1rem;
+	width: 100%;
+	color: white;
+	background-color: #403233;
+	padding: 10px;
+	border-radius: 10px;
+	border: 2px solid #2081C3;
+	border-right: 10px solid #2081C3;
+}
+
+.answer li{
+	margin-bottom: 1rem;
+}
+
+.answer li::after{
+	content:'.';
+}
+
+.answer li.without-period::before{
+	content: '';
+}
+
+.answer li.without-period::after{
+	content: '';
+}
+
+.answer li:last-child{
+	margin-bottom: 0;
+}
+
+.question-container ol{
+	counter-reset: ordered-list;
+	
+}
+
+.question-container li::before{
+	counter-increment: ordered-list;
+	content: counter(ordered-list) '-';
+}
+
+@media (max-width: 600px){
+	body{
+		font-size: 1.5rem;
+	}
+	
+	.container{
+		max-width: 100%;
+		margin: 0;
+	}
+}
